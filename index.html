@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Ronan - Finance & Data Analytics</title>
+    <title>Brian Ronan - Stonehill Skyhawk Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -11,198 +11,435 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --skyhawk-purple: #582C83;
+            --skyhawk-gold: #FFB81C;
+            --skyhawk-light: #7B4FA0;
+            --skyhawk-dark: #3D1A5C;
+            --text-dark: #2C2C2C;
+            --bg-light: #F8F7FA;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f4f4f4;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            scroll-behavior: smooth;
         }
         
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        /* Navigation */
+        nav {
+            background: var(--skyhawk-purple);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(88, 44, 131, 0.3);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
             color: white;
-            padding: 3rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+        
+        nav a:hover {
+            color: var(--skyhawk-gold);
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--skyhawk-purple) 0%, var(--skyhawk-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="%23FFB81C" fill-opacity="0.1" d="M0,0 L1200,0 L1200,80 Q900,120 600,80 T0,80 Z"/></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+        
+        header .content {
+            position: relative;
+            z-index: 1;
         }
         
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--skyhawk-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .skyhawk-badge {
+            display: inline-block;
+            background: var(--skyhawk-gold);
+            color: var(--skyhawk-purple);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
         
         .contact-info {
-            margin-top: 1rem;
-            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            font-size: 1rem;
         }
         
         .contact-info a {
-            color: #fff;
+            color: white;
             text-decoration: none;
             margin: 0 1rem;
-            transition: opacity 0.3s;
+            transition: color 0.3s;
+            display: inline-block;
         }
         
         .contact-info a:hover {
-            opacity: 0.8;
+            color: var(--skyhawk-gold);
         }
         
+        /* Container */
         .container {
-            max-width: 1100px;
-            margin: 2rem auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 2rem;
         }
         
-        .section {
-            background: white;
-            margin-bottom: 2rem;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
         }
         
-        .section h2 {
-            color: #1e3c72;
-            border-bottom: 3px solid #2a5298;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+        section:nth-child(even) {
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--skyhawk-purple);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--skyhawk-gold);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* Education Section */
+        .education-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(88, 44, 131, 0.1);
+            border-left: 5px solid var(--skyhawk-gold);
         }
         
         .education-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             flex-wrap: wrap;
         }
         
         .education-header h3 {
-            color: #2a5298;
-            font-size: 1.3rem;
+            color: var(--skyhawk-purple);
+            font-size: 1.8rem;
         }
         
         .date {
             color: #666;
             font-style: italic;
-            font-size: 0.9rem;
+            font-weight: 600;
+            background: var(--bg-light);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
         }
         
-        .education-details {
-            margin: 0.5rem 0;
+        .degree-info {
+            margin: 1rem 0;
+            font-size: 1.1rem;
         }
         
-        .honors {
-            background: #f8f9fa;
+        .gpa {
+            display: inline-block;
+            background: var(--skyhawk-gold);
+            color: var(--skyhawk-purple);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+        
+        .honors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .honor-badge {
+            background: linear-gradient(135deg, var(--skyhawk-purple), var(--skyhawk-light));
+            color: white;
             padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(88, 44, 131, 0.2);
         }
         
-        .honors strong {
-            color: #1e3c72;
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
         }
         
-        .experience-item {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
+        .experience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(88, 44, 131, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--skyhawk-purple);
         }
         
-        .experience-item:last-child {
-            border-bottom: none;
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(88, 44, 131, 0.2);
         }
         
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0.3rem;
+            margin-bottom: 1rem;
             flex-wrap: wrap;
         }
         
-        .job-title {
-            color: #2a5298;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        
         .company {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-        
-        .experience-item ul {
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-        
-        .experience-item li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .activities-grid {
-            display: grid;
-            gap: 1rem;
-        }
-        
-        .activity-item {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 5px;
-            border-left: 4px solid #2a5298;
-        }
-        
-        .activity-title {
+            font-size: 1.3rem;
+            color: var(--skyhawk-purple);
             font-weight: bold;
-            color: #1e3c72;
             margin-bottom: 0.3rem;
         }
         
-        .skills-grid {
+        .job-title {
+            color: var(--skyhawk-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .experience-card ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .experience-card li {
+            margin-bottom: 0.7rem;
+            color: #444;
+        }
+        
+        .experience-card li::marker {
+            color: var(--skyhawk-gold);
+        }
+        
+        /* Activities Section */
+        .activities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .activity-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(88, 44, 131, 0.1);
+            border-left: 5px solid var(--skyhawk-gold);
+            transition: transform 0.3s;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .activity-title {
+            font-size: 1.3rem;
+            color: var(--skyhawk-purple);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-role {
+            color: var(--skyhawk-gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         
         .skill-category {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 5px;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(88, 44, 131, 0.1);
         }
         
         .skill-category h3 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
+            color: var(--skyhawk-purple);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3::before {
+            content: '◆';
+            color: var(--skyhawk-gold);
+            margin-right: 0.5rem;
             font-size: 1.2rem;
         }
         
-        .skill-list {
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, var(--skyhawk-purple), var(--skyhawk-light));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+        
+        .cert-list {
             list-style: none;
         }
         
-        .skill-list li {
-            padding: 0.3rem 0;
-            color: #555;
+        .cert-list li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--bg-light);
+            color: #444;
         }
         
-        .skill-list li:before {
-            content: "▹ ";
-            color: #2a5298;
+        .cert-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .cert-list li::before {
+            content: '✓';
+            color: var(--skyhawk-gold);
             font-weight: bold;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
         }
         
+        /* Footer */
         footer {
-            background: #1e3c72;
+            background: linear-gradient(135deg, var(--skyhawk-dark) 0%, var(--skyhawk-purple) 100%);
             color: white;
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             margin-top: 2rem;
         }
         
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .skyhawk-pride {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--skyhawk-gold);
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .section-header h2 {
                 font-size: 2rem;
             }
             
@@ -216,154 +453,219 @@
             }
             
             .date {
-                margin-top: 0.3rem;
+                margin-top: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Brian Ronan</h1>
-        <p>Finance & Data Analytics Professional</p>
-        <div class="contact-info">
-            <a href="mailto:Brianronan26@gmail.com">✉ Brianronan26@gmail.com</a>
-            <a href="tel:508-361-3177">📞 508-361-3177</a>
-            <a href="https://www.linkedin.com/in/brianronan26" target="_blank">🔗 LinkedIn</a>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <div class="content">
+            <h1>Brian Ronan</h1>
+            <p class="subtitle">Finance • Data Analytics • Investment Research</p>
+            <div class="skyhawk-badge">🦅 Stonehill Skyhawk Class of 2026</div>
+            <div class="contact-info">
+                <a href="mailto:Brianronan26@gmail.com">✉ Email</a>
+                <a href="tel:508-361-3177">📞 Phone</a>
+                <a href="https://www.linkedin.com/in/brianronan26" target="_blank">🔗 LinkedIn</a>
+            </div>
         </div>
     </header>
 
-    <div class="container">
-        <section class="section">
-            <h2>Education</h2>
-            <div class="education-header">
-                <h3>Stonehill College | Easton, MA</h3>
-                <span class="date">Anticipated Graduation: May 2026</span>
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+                <p>Building a strong foundation in finance and analytics at Stonehill College</p>
             </div>
-            <div class="education-details">
-                <p><strong>Bachelor of Science in Business Administration</strong></p>
-                <p>Major: Finance | Minor: Data Analytics | GPA: 3.82</p>
-            </div>
-            <div class="honors">
-                <strong>Awards & Honors:</strong> Lambda Epsilon Sigma Honor Society | Beta Gamma Sigma Honor Society | Dean's List (6 Semesters)
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Professional Experience</h2>
             
-            <div class="experience-item">
-                <div class="job-header">
+            <div class="education-card">
+                <div class="education-header">
                     <div>
-                        <div class="company">Skyhawk Investment Group - SCIFI | Easton, MA</div>
-                        <div class="job-title">Consumer Staples & Cyclicals Research Analyst</div>
+                        <h3>Stonehill College</h3>
+                        <p style="color: #666; font-size: 1.1rem;">Easton, Massachusetts</p>
                     </div>
-                    <span class="date">June 2025 - Present</span>
+                    <span class="date">Expected May 2026</span>
                 </div>
-                <ul>
-                    <li>Selected for a competitive, multi-year academic and professional development program focused on investment analysis, modeling, and valuation while managing the Herlihy Opportunity Fund</li>
-                    <li>Participate in twice-weekly investment meetings to discuss company and market developments affecting portfolio holdings and identify new investment opportunities</li>
-                    <li>Required to propose at least two investment ideas per semester including extensive modeling, valuation analysis, written reports, and presentations</li>
-                    <li>Mentor new analysts and create fund reports for college administration</li>
-                </ul>
+                
+                <div class="degree-info">
+                    <p><strong>Bachelor of Science in Business Administration</strong></p>
+                    <p>Major: Finance | Minor: Data Analytics</p>
+                    <span class="gpa">GPA: 3.82</span>
+                </div>
+                
+                <h4 style="color: var(--skyhawk-purple); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.2rem;">Awards & Honors</h4>
+                <div class="honors-grid">
+                    <div class="honor-badge">Lambda Epsilon Sigma Honor Society</div>
+                    <div class="honor-badge">Beta Gamma Sigma Honor Society</div>
+                    <div class="honor-badge">Dean's List (6 Semesters)</div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="company">Skyhawk Investment Group - SCIFI | Easton, MA</div>
-                        <div class="job-title">Equity Research Assistant</div>
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <p>Building expertise through hands-on investment and financial services roles</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company">Skyhawk Investment Group - SCIFI</div>
+                            <div class="job-title">Consumer Staples & Cyclicals Research Analyst</div>
+                            <p style="color: #666; margin-top: 0.3rem;">Easton, MA</p>
+                        </div>
+                        <span class="date">June 2025 - Present</span>
                     </div>
-                    <span class="date">Prior Role</span>
-                </div>
-                <ul>
-                    <li>Assisted research analyst and delivered stock pitches with DCF models for potential fund investments</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="company">RWA Wealth Partners | Newton, MA</div>
-                        <div class="job-title">Client Services & Operations Intern</div>
-                    </div>
-                    <span class="date">June 2025 - August 2025</span>
-                </div>
-                <ul>
-                    <li>Developed financial plans in eMoney software and participated in weekly discussions to model and evaluate client scenarios</li>
-                    <li>Ran daily reports in Salesforce and Orion to support client portfolios with excess cash and out of tolerance allocations</li>
-                    <li>Designed a niche marketing campaign to increase firm exposure and presented findings to Executive leadership</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="company">Friends For Financial Wellness - F4FW | Natick, MA</div>
-                        <div class="job-title">Sales Intern</div>
-                    </div>
-                    <span class="date">January 2025 - June 2025</span>
-                </div>
-                <ul>
-                    <li>Prospected leads through LinkedIn and fintech events, built client relationships, supported marketing initiatives</li>
-                    <li>Created and delivered invoices, engaged in overall business development activities</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Industry Mentorship</h2>
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="company">Mass Fintech Hub Mentoring Program | Boston, MA</div>
-                    </div>
-                    <span class="date">December 2024 - April 2025</span>
-                </div>
-                <ul>
-                    <li>Partnered with a fintech mentor from Plaid to gain in-depth knowledge of digital payments, open banking, and emerging financial technologies through collaborative discussions and networking</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Collegiate Activities</h2>
-            <div class="activities-grid">
-                <div class="activity-item">
-                    <div class="activity-title">Vice President, Stonehill Fintech Club</div>
-                    <div class="date">September 2024 - Present</div>
-                    <p>Organize and execute networking events by securing guest speakers from leading fintech firms and manage logistics for workshops, panels, and member engagement opportunities</p>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-title">Member, Stonehill Chess Club</div>
-                    <div class="date">February 2024 - Present</div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-title">Member, Financial Management Association</div>
-                    <div class="date">August 2023 - Present</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Skills & Certifications</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Technical Skills</h3>
-                    <ul class="skill-list">
-                        <li>Microsoft Office 365</li>
-                        <li>Bloomberg Terminal</li>
-                        <li>Salesforce</li>
-                        <li>Python</li>
-                        <li>SQL</li>
-                        <li>SAS</li>
-                        <li>Power BI</li>
-                        <li>eMoney Advisor</li>
-                        <li>Orion Advisor Solutions</li>
+                    <ul>
+                        <li>Selected for competitive, multi-year academic and professional development program managing the Herlihy Opportunity Fund</li>
+                        <li>Participate in twice-weekly investment meetings analyzing company and market developments affecting portfolio holdings</li>
+                        <li>Required to propose at least two investment ideas per semester with extensive DCF modeling, valuation analysis, written reports, and presentations</li>
+                        <li>Mentor new analysts and create comprehensive fund reports for college administration</li>
                     </ul>
                 </div>
+
+                <div class="experience-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company">Skyhawk Investment Group - SCIFI</div>
+                            <div class="job-title">Equity Research Assistant</div>
+                            <p style="color: #666; margin-top: 0.3rem;">Easton, MA</p>
+                        </div>
+                        <span class="date">Prior Role</span>
+                    </div>
+                    <ul>
+                        <li>Assisted research analysts in delivering stock pitches with DCF models for potential fund investments</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company">RWA Wealth Partners</div>
+                            <div class="job-title">Client Services & Operations Intern</div>
+                            <p style="color: #666; margin-top: 0.3rem;">Newton, MA</p>
+                        </div>
+                        <span class="date">June 2025 - August 2025</span>
+                    </div>
+                    <ul>
+                        <li>Developed comprehensive financial plans in eMoney software with weekly client scenario modeling</li>
+                        <li>Executed daily Salesforce and Orion reports to support client portfolios with excess cash and allocation rebalancing</li>
+                        <li>Designed and presented niche marketing campaign to Executive leadership to increase firm exposure</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company">Friends For Financial Wellness (F4FW)</div>
+                            <div class="job-title">Sales Intern</div>
+                            <p style="color: #666; margin-top: 0.3rem;">Natick, MA</p>
+                        </div>
+                        <span class="date">January 2025 - June 2025</span>
+                    </div>
+                    <ul>
+                        <li>Prospected leads through LinkedIn and fintech events while building strong client relationships</li>
+                        <li>Supported marketing initiatives, managed invoicing, and engaged in comprehensive business development</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="company">Mass Fintech Hub Mentoring Program</div>
+                            <div class="job-title">Industry Mentorship</div>
+                            <p style="color: #666; margin-top: 0.3rem;">Boston, MA</p>
+                        </div>
+                        <span class="date">December 2024 - April 2025</span>
+                    </div>
+                    <ul>
+                        <li>Partnered with fintech mentor from Plaid to gain in-depth knowledge of digital payments, open banking, and emerging financial technologies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities">
+        <div class="container">
+            <div class="section-header">
+                <h2>Collegiate Leadership & Activities</h2>
+                <p>Active engagement in the Stonehill community</p>
+            </div>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-title">Stonehill Fintech Club</div>
+                    <div class="activity-role">Vice President</div>
+                    <span class="date">September 2024 - Present</span>
+                    <p style="margin-top: 1rem; color: #444;">Organize and execute networking events by securing guest speakers from leading fintech firms. Manage logistics for workshops, panels, and member engagement opportunities.</p>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-title">Stonehill Chess Club</div>
+                    <div class="activity-role">Member</div>
+                    <span class="date">February 2024 - Present</span>
+                    <p style="margin-top: 1rem; color: #444;">Active participant in strategic thinking and competitive play.</p>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-title">Financial Management Association</div>
+                    <div class="activity-role">Member</div>
+                    <span class="date">August 2023 - Present</span>
+                    <p style="margin-top: 1rem; color: #444;">Engaging with peers on financial topics and industry trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills & Certifications</h2>
+                <p>Technical expertise and professional development</p>
+            </div>
+            
+            <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Certifications</h3>
-                    <ul class="skill-list">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microsoft Office 365</span>
+                        <span class="skill-tag">Bloomberg</span>
+                        <span class="skill-tag">Salesforce</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">SAS</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">eMoney Advisor</span>
+                        <span class="skill-tag">Orion Advisor</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Certifications & Programs</h3>
+                    <ul class="cert-list">
                         <li>SIE Exam - In Progress</li>
                         <li>Investment Foundations® Certificate (CFA Institute)</li>
                         <li>Bloomberg Market Concepts</li>
@@ -373,11 +675,21 @@
                     </ul>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Brian Ronan. All rights reserved.</p>
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="skyhawk-pride">Go Skyhawks! 🦅</div>
+            <p style="margin-bottom: 1rem;">Brian Ronan | Stonehill College Class of 2026</p>
+            <div class="contact-info">
+                <a href="mailto:Brianronan26@gmail.com">Brianronan26@gmail.com</a>
+                <a href="tel:508-361-3177">508-361-3177</a>
+                <a href="https://www.linkedin.com/in/brianronan26" target="_blank">LinkedIn Profile</a>
+            </div>
+            <p style="margin-top: 1.5rem; opacity: 0.8;">&copy; 2025 Brian Ronan. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
