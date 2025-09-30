@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Ronan - Finance & Data Analytics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .education-header h3 {
+            color: #2a5298;
+            font-size: 1.3rem;
+        }
+        
+        .date {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .education-details {
+            margin: 0.5rem 0;
+        }
+        
+        .honors {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        
+        .honors strong {
+            color: #1e3c72;
+        }
+        
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.3rem;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            color: #2a5298;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-item ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .experience-item li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .activity-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #2a5298;
+        }
+        
+        .activity-title {
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 0.3rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+        
+        .skill-category h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 0.3rem 0;
+            color: #555;
+        }
+        
+        .skill-list li:before {
+            content: "▹ ";
+            color: #2a5298;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            
+            .job-header, .education-header {
+                flex-direction: column;
+            }
+            
+            .date {
+                margin-top: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Brian Ronan</h1>
+        <p>Finance & Data Analytics Professional</p>
+        <div class="contact-info">
+            <a href="mailto:Brianronan26@gmail.com">✉ Brianronan26@gmail.com</a>
+            <a href="tel:508-361-3177">📞 508-361-3177</a>
+            <a href="https://www.linkedin.com/in/brianronan26" target="_blank">🔗 LinkedIn</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-header">
+                <h3>Stonehill College | Easton, MA</h3>
+                <span class="date">Anticipated Graduation: May 2026</span>
+            </div>
+            <div class="education-details">
+                <p><strong>Bachelor of Science in Business Administration</strong></p>
+                <p>Major: Finance | Minor: Data Analytics | GPA: 3.82</p>
+            </div>
+            <div class="honors">
+                <strong>Awards & Honors:</strong> Lambda Epsilon Sigma Honor Society | Beta Gamma Sigma Honor Society | Dean's List (6 Semesters)
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="company">Skyhawk Investment Group - SCIFI | Easton, MA</div>
+                        <div class="job-title">Consumer Staples & Cyclicals Research Analyst</div>
+                    </div>
+                    <span class="date">June 2025 - Present</span>
+                </div>
+                <ul>
+                    <li>Selected for a competitive, multi-year academic and professional development program focused on investment analysis, modeling, and valuation while managing the Herlihy Opportunity Fund</li>
+                    <li>Participate in twice-weekly investment meetings to discuss company and market developments affecting portfolio holdings and identify new investment opportunities</li>
+                    <li>Required to propose at least two investment ideas per semester including extensive modeling, valuation analysis, written reports, and presentations</li>
+                    <li>Mentor new analysts and create fund reports for college administration</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="company">Skyhawk Investment Group - SCIFI | Easton, MA</div>
+                        <div class="job-title">Equity Research Assistant</div>
+                    </div>
+                    <span class="date">Prior Role</span>
+                </div>
+                <ul>
+                    <li>Assisted research analyst and delivered stock pitches with DCF models for potential fund investments</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="company">RWA Wealth Partners | Newton, MA</div>
+                        <div class="job-title">Client Services & Operations Intern</div>
+                    </div>
+                    <span class="date">June 2025 - August 2025</span>
+                </div>
+                <ul>
+                    <li>Developed financial plans in eMoney software and participated in weekly discussions to model and evaluate client scenarios</li>
+                    <li>Ran daily reports in Salesforce and Orion to support client portfolios with excess cash and out of tolerance allocations</li>
+                    <li>Designed a niche marketing campaign to increase firm exposure and presented findings to Executive leadership</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="company">Friends For Financial Wellness - F4FW | Natick, MA</div>
+                        <div class="job-title">Sales Intern</div>
+                    </div>
+                    <span class="date">January 2025 - June 2025</span>
+                </div>
+                <ul>
+                    <li>Prospected leads through LinkedIn and fintech events, built client relationships, supported marketing initiatives</li>
+                    <li>Created and delivered invoices, engaged in overall business development activities</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Industry Mentorship</h2>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="company">Mass Fintech Hub Mentoring Program | Boston, MA</div>
+                    </div>
+                    <span class="date">December 2024 - April 2025</span>
+                </div>
+                <ul>
+                    <li>Partnered with a fintech mentor from Plaid to gain in-depth knowledge of digital payments, open banking, and emerging financial technologies through collaborative discussions and networking</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Collegiate Activities</h2>
+            <div class="activities-grid">
+                <div class="activity-item">
+                    <div class="activity-title">Vice President, Stonehill Fintech Club</div>
+                    <div class="date">September 2024 - Present</div>
+                    <p>Organize and execute networking events by securing guest speakers from leading fintech firms and manage logistics for workshops, panels, and member engagement opportunities</p>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-title">Member, Stonehill Chess Club</div>
+                    <div class="date">February 2024 - Present</div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-title">Member, Financial Management Association</div>
+                    <div class="date">August 2023 - Present</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Skills & Certifications</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Microsoft Office 365</li>
+                        <li>Bloomberg Terminal</li>
+                        <li>Salesforce</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>SAS</li>
+                        <li>Power BI</li>
+                        <li>eMoney Advisor</li>
+                        <li>Orion Advisor Solutions</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <ul class="skill-list">
+                        <li>SIE Exam - In Progress</li>
+                        <li>Investment Foundations® Certificate (CFA Institute)</li>
+                        <li>Bloomberg Market Concepts</li>
+                        <li>IBM Cognitive Classes - Python 101 for Data Science</li>
+                        <li>Vanderbilt University Prompt Engineering for ChatGPT</li>
+                        <li>Bentley University Portfolio Management Summer Program</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Brian Ronan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
